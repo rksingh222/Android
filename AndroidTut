@@ -282,3 +282,60 @@ fun UnitConverterPreview(){
 }
 
 then In the second window you will see a comb like figure you will click that and you will see the preview 
+
+Button , Onclick and Toast: Android(Denis Panjuta – kotlin)
+Button is a composable here we are not implementing what happens on clicking
+fun UnitConverter(){
+    Column {
+        Text(text = "Unit Converter")
+        OutlinedTextField(value = "", onValueChange = {
+            //Here goes what should happen when the value of our outlined
+            //Text field changes
+        })
+        Row {
+            Button(onClick = { /*TODO*/ }) {
+                Text("Click Me")
+            }
+        }
+        Text(text = "Result")
+    }
+}
+
+Adding toast to the button
+
+fun UnitConverter(){
+    Column {
+        Text(text = "Unit Converter")
+        OutlinedTextField(value = "", onValueChange = {
+            //Here goes what should happen when the value of our outlined
+            //Text field changes
+        })
+        Row {
+            val context = LocalContext.current
+            Button(onClick = { /*TODO*/
+              Toast.makeText(context,"Greetings",Toast.LENGTH_LONG ).show()
+            }) {
+                Text("Click Me")
+            }
+        }
+        Text(text = "Result")
+    }
+}
+Box and Icons and Drop Down Menus: Android(Denis Panjuta – kotlin)
+These are composable
+Column {
+            Text(text = "Unit Converter")
+        OutlinedTextField(value = "", onValueChange = {
+            //Here goes what should happen when the value of our outlined
+            //Text field changes
+        })
+        Row {
+            Box {
+                Button(onClick = { /*TODO*/ }) {
+                    Text(text = "Select")
+                    Icon(imageVector = Icons.Default.ArrowDropDown, contentDescription = "")
+                }
+            }
+        }
+        Text(text = "Result")
+}
