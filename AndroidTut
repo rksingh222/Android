@@ -339,3 +339,34 @@ Column {
         }
         Text(text = "Result")
 }
+
+How to increase the screen size, vertical alignment and horizxontal alignment: Android(Denis Panjuta – kotlin)
+modifier = Modifier.fillMaxSize() === this given in the Column Composable in Function parameter will increase the size of the output screen
+
+verticalArrangement = Arrangement.Center  === this will align vertically center the composable
+
+horizontalAlignment =  Alignment.CenterHorizontally  ===  this will align horizontally center the composable
+
+@Composable
+fun UnitConverter(){
+Column (modifier = Modifier.fillMaxSize(),
+     verticalArrangement = Arrangement.Center,
+    horizontalAlignment =  Alignment.CenterHorizontally
+    ){
+            Text(text = "Unit Converter")
+        OutlinedTextField(value = "", onValueChange = {
+            //Here goes what should happen when the value of our outlined
+            //Text field changes
+        })
+        Row {
+            Box {
+                Button(onClick = { /*TODO*/ }) {
+                    Text(text = "Select")
+                    Icon(imageVector = Icons.Default.ArrowDropDown, contentDescription = "")
+                }
+            }
+        }
+        Text(text = "Result")
+    }
+}
+
