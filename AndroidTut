@@ -370,3 +370,59 @@ Column (modifier = Modifier.fillMaxSize(),
     }
 }
 
+Spacer or Padding: Android(Denis Panjuta – kotlin)
+Spacer is used to give padding
+
+fun UnitConverter(){
+Column (modifier = Modifier.fillMaxSize(),
+     verticalArrangement = Arrangement.Center,
+    horizontalAlignment =  Alignment.CenterHorizontally
+    ){
+            Text(text = "Unit Converter")
+    Spacer(modifier = Modifier.height(16.dp))
+
+        OutlinedTextField(value = "", onValueChange = {
+            //Here goes what should happen when the value of our outlined
+            //Text field changes
+        })
+        Row {
+            Box {
+                Button(onClick = { /*TODO*/ }) {
+                    Text(text = "Select")
+                    Icon(imageVector = Icons.Default.ArrowDropDown, contentDescription = "")
+                }
+            }
+        }
+    Spacer(modifier = Modifier.height(16.dp))
+        Text(text = "Result")
+    }
+}
+
+if you want to keep a padding between text and other element you can also use like this
+Spacer in Text: Android(Denis Panjuta – kotlin)
+
+@Composable
+fun UnitConverter(){
+Column (modifier = Modifier.fillMaxSize(),
+     verticalArrangement = Arrangement.Center,
+    horizontalAlignment =  Alignment.CenterHorizontally
+    ){
+            Text(text = "Unit Converter", modifier = Modifier.padding(100.dp)).  // here we are using modifier for padding
+    Spacer(modifier = Modifier.height(16.dp))
+
+        OutlinedTextField(value = "", onValueChange = {
+            //Here goes what should happen when the value of our outlined
+            //Text field changes
+        })
+        Row {
+            Box {
+                Button(onClick = { /*TODO*/ }) {
+                    Text(text = "Select")
+                    Icon(imageVector = Icons.Default.ArrowDropDown, contentDescription = "")
+                }
+            }
+        }
+    Spacer(modifier = Modifier.height(16.dp))
+        Text(text = "Result")
+    }
+}
